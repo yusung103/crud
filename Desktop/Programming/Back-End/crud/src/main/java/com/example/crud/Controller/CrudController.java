@@ -23,8 +23,8 @@ public class CrudController {
     }
 
     @GetMapping("/read")
-    public String Read(Model model, Integer id){
-        model.addAttribute("list", crudService.list(id));
+    public String Read(Model model){
+        model.addAttribute("list", crudService.list());
 
         return "ok";
     }
