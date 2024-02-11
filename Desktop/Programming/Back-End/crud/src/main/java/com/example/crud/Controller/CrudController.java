@@ -1,9 +1,7 @@
 package com.example.crud.Controller;
 
 import com.example.crud.entity.User;
-import com.example.crud.repository.CrudRepository;
 import com.example.crud.service.CrudService;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -35,4 +33,12 @@ public class CrudController {
         crudService.delete(id);
         return "ok";
     }
+
+    @GetMapping("/update/{id}")
+    public String Modify(@PathVariable("id") Integer id, Model model){
+
+        model.addAttribute("User", crudService.update(id));
+        return "ok";
+    }
+
 }

@@ -24,4 +24,9 @@ public class CrudService {
 
        crudRepository.deleteById(id);
     }
+
+    public User update(Integer id){
+
+        return crudRepository.findById(id).get();
+    }
 }
